@@ -1,0 +1,47 @@
+rules_version = '2';
+
+// Plantilla: `npm run configurar` genera firestore.rules con tus correos y el UID del motor.
+// Solo entran dos identidades: quien administra la oficina y la cuenta de servicio del motor.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function esDueno() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [__DUENOS__];
+    }
+    function esMotor() {
+      return request.auth != null && request.auth.uid == "__MOTOR_UID__";
+    }
+
+    match /config/{id} {
+      allow read: if esDueno() || esMotor();
+      allow create, update: if esDueno() || esMotor();
+    }
+    match /agentes/{id} {
+      allow read: if esDueno() || esMotor();
+      allow create, update: if esDueno() || esMotor();
+      allow delete: if esDueno();
+    }
+    match /tareas/{id} {
+      allow read: if esDueno() || esMotor();
+      allow create, update: if esDueno() || esMotor();
+      allow delete: if esDueno();
+    }
+    match /mensajes/{id} {
+      allow read: if esDueno() || esMotor();
+      allow create, update: if esDueno() || esMotor();
+      allow delete: if esDueno();
+    }
+    match /rutinas/{id} {
+      allow read: if esDueno() || esMotor();
+      allow write: if esDueno();
+      // El motor solo marca cuándo corrió la rutina por última vez.
+      allow update: if esMotor()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['ultimaFecha']);
+    }
+    match /motor/{id} {
+      allow read: if esDueno() || esMotor();
+      allow write: if esMotor();
+    }
+  }
+}

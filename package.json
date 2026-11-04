@@ -1,0 +1,25 @@
+{
+  "name": "oficina-agentes-ia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tu oficina de agentes de IA: un equipo con nombre y manual, en 3D, que trabaja con tu Claude Code y te entrega todo para aprobar.",
+  "type": "module",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "workspaces": [
+    "web",
+    "engine"
+  ],
+  "scripts": {
+    "demo": "npm run dev -w web",
+    "configurar": "node scripts/configurar.mjs",
+    "publicar": "npm run build -w web && npx -y firebase-tools@latest deploy --only hosting,firestore:rules,firestore:indexes",
+    "sembrar": "node --env-file=engine/.env scripts/sembrar.mjs",
+    "motor": "npm start -w engine",
+    "doctor": "node scripts/doctor.mjs",
+    "autoarranque": "node scripts/autoarranque.mjs",
+    "test": "npm test -w engine"
+  }
+}

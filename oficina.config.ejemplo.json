@@ -1,0 +1,22 @@
+{
+  "firebase": {
+    "apiKey": "",
+    "authDomain": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+    "appId": ""
+  },
+  "nombre": "Oficina de Mi Marca",
+  "negocio": "Qué vendes, a quién y qué te hace distinto, en 2 o 3 líneas.",
+  "tono": "Cercano, directo y sin relleno.",
+  "color": "#7c5cff",
+  "logo": "",
+  "zonaHoraria": "America/Guayaquil",
+  "duenos": ["tu-correo@gmail.com"],
+  "agentes": [
+    { "nombre": "Nora", "rol": "coordinador" },
+    { "nombre": "Leo", "rol": "ideas" },
+    { "nombre": "Vera", "rol": "guiones" }
+  ]
+}

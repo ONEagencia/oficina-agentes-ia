@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.firebase/
+.firebaserc
+
+# Datos de cada instalación: nunca se suben
+oficina.config.json
+firestore.rules
+web/.env.local
+engine/.env
+engine/arrancar-motor.cmd
