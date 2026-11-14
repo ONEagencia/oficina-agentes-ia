@@ -58,6 +58,8 @@ La persona inicia sesión escribiendo en este chat:
 ! npx -y firebase-tools@latest login
 ```
 
+Si su app de Claude no acepta comandos con `!`, pídele que abra una terminal en esta carpeta y corra ahí `npx -y firebase-tools@latest login`. Espera a que confirme.
+
 Luego, tú:
 
 1. Propón un ID único (minúsculas, números y guiones) y crea el proyecto, tras confirmarlo:

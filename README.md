@@ -31,7 +31,22 @@ Abre `http://localhost:5173`.
 
 ## Instalarla
 
-Necesitas [Node 20.6+](https://nodejs.org), [Claude Code](https://claude.com/claude-code), un plan de pago de Claude y una cuenta de Google. Dentro de la carpeta:
+Necesitas [Node 20.6+](https://nodejs.org), [Git](https://git-scm.com), [Claude Code](https://claude.com/claude-code), un plan de pago de Claude y una cuenta de Google.
+
+La forma más fácil: abre Claude Code en la carpeta donde la quieres guardar y pégale esto:
+
+```
+Instálame la oficina de agentes IA de este repositorio:
+https://github.com/ONEagencia/oficina-agentes-ia
+
+1. Clónalo en esta carpeta y trabaja dentro de la carpeta oficina-agentes-ia.
+2. Lee .claude/skills/montar-oficina/SKILL.md y síguelo de principio a fin, fase por fase.
+3. Si me falta algo en la computadora (Node o Git), dime cómo instalarlo y sigue cuando te confirme.
+
+Hazme las preguntas de la entrevista de a poco. No me muestres ninguna clave.
+```
+
+Si ya la descargaste, dentro de la carpeta:
 
 ```bash
 claude
